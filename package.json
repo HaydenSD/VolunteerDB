@@ -8,6 +8,8 @@
     "test": "npm run lint && npm run testonly",
     "test-watch": "npm run testonly -- --watch --watch-extensions js",
     "storybook": "start-storybook -p 9001 -s ./public"
+    "elasticsearch": "./server/scripts/setup_java8 ./server/scripts/setup_es ./server/scripts/run_es"
+
   },
   "devDependencies": {
     "@kadira/storybook": "^1.7.0",
