@@ -1,20 +1,43 @@
 import {VolunteerProfiles} from '/lib/collections';
-import elasticsearch from '../configs/elasticsearch'
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 
+/**
+ * See alanning:elasticsearch helper library docs at https://github.com/alanning/meteor-elasticsearch
+ *
+ */
+
+var ES = new ElasticSearch();
+
 export default function () {
   Meteor.methods({
-    'volunteer-profiles.search'(query) {
-      check(query, String);
 
-      if(!this.userId) {
-        return;
-      }
+    'volunteers.profiles.search'(searchText) {
+      check(searchText, String);
+      console.log("[getVolunteerProfiles]", searchText);
+      /** Example Only **/
+      var query = {
+        "match" : {
+          "interests": {
+            "query" : searchText,
+            "operator": "and",
+            "fuzziness" : 2
+          }
+        }
+      };
 
-      const createdAt = new Date();
-      const post = {_id, title, content, createdAt};
-      Posts.insert(post);
+      var result = ES.EsClient.search({
+        index: "easysearch",
+        type: "volunteer-profiles",
+        body: {
+          query: query
+        }
+      });
+      console.log(result);
+      return result.hits.hits.map(function(doc) {
+        return doc._source;
+      });
     }
+
   });
 }

@@ -1,5 +1,7 @@
 accounts-base@1.2.5
 accounts-password@1.1.7
+alanning:elasticsearch@0.0.4
+alanning:update-helpers@0.0.1
 allow-deny@1.0.3
 audit-argument-checks@1.0.6
 autoupdate@1.2.7
@@ -22,10 +24,13 @@ ddp-rate-limiter@1.0.3
 ddp-server@1.2.5
 deps@1.0.11
 diff-sequence@1.0.4
+easysearch:core@2.0.9
+easysearch:elasticsearch@2.0.9
 ecmascript@0.4.2
 ecmascript-runtime@0.2.9
 ejson@1.0.10
 email@1.0.11
+erasaur:meteor-lodash@4.0.0
 es5-shim@4.5.9
 fastclick@1.0.10
 fortawesome:fontawesome@4.5.0
@@ -41,8 +46,10 @@ launch-screen@1.0.10
 livedata@1.0.17
 localstorage@1.0.8
 logging@1.0.11
+matb33:collection-hooks@0.8.1
 meteor@1.1.13
 meteor-base@1.0.3
+meteorhacks:async@1.0.0
 minifier-css@1.1.10
 minifier-js@1.1.10
 minimongo@1.0.13
@@ -64,8 +71,6 @@ reactive-var@1.0.8
 reload@1.1.7
 retry@1.0.6
 routepolicy@1.0.9
-semantic:ui@2.1.8
-semantic:ui-data@2.1.8
 service-configuration@1.0.8
 session@1.1.4
 sha@1.0.6
@@ -77,6 +82,7 @@ standard-minifier-js@1.0.5
 templating@1.1.8
 templating-tools@1.0.3
 tracker@1.0.12
+twbs:bootstrap@3.3.6
 ui@1.0.10
 underscore@1.0.7
 url@1.0.8

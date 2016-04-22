@@ -1,5 +1,5 @@
-// import posts from './posts';
+ import search from './search';
 
 export default {
-  // posts
+  search
 };

@@ -3,18 +3,23 @@ import {
 } from 'mantra-core';
 import Component from '../components/volunteer_search';
 
+
 export const composer = ({context}, onData) => {
 
   const {Meteor, Collections, LocalState} = context();
-  let searchString = LocalState.get("volunteers.searchString");
-  let searchResults = []; // todo: method call to elasticsearch
+  let searchResults = LocalState.get('volunteers.searchResults');
   onData(null, {
-    searchString,
-    searchResults
+    searchResults,
+    resultsCount: searchResults.length
   });
 };
 
+export const depsMapper = (context, actions) => ({
+  getResults: actions.search.getResults,
+  context: () => context
+});
+
 export default composeAll(
   composeWithTracker(composer),
-  useDeps()
+  useDeps(depsMapper)
 )(Component);

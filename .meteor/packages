@@ -24,4 +24,7 @@ accounts-password
 fortawesome:fontawesome
 standard-minifier-css
 standard-minifier-js
-semantic:ui
+alanning:elasticsearch
+matb33:collection-hooks
+twbs:bootstrap
+easysearch:elasticsearch
